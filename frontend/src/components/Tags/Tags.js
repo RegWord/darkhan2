@@ -2,9 +2,12 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import classes from './tags.module.css';
 
-export default function Tags({ tags = [], forFoodPage }) {
-  // Лог для проверки данных
-  console.log("Tags received:", tags);
+export default function Tags({ tags = [] , forFoodPage }) {
+  console.log("Tags received:", tags); // Логируем, что реально приходит
+
+  if (!Array.isArray(tags)) {
+    return <p>Ошибка: теги не загружены</p>; // Безопасный вывод ошибки
+  }
 
   return (
     <div
@@ -13,7 +16,7 @@ export default function Tags({ tags = [], forFoodPage }) {
         justifyContent: forFoodPage ? 'start' : 'center',
       }}
     >
-      {Array.isArray(tags) && tags.length > 0 ? (
+      {tags.length > 0 ? (
         tags.map(tag => (
           <Link key={tag.name} to={`/tag/${tag.name}`}>
             {tag.name}
@@ -21,7 +24,7 @@ export default function Tags({ tags = [], forFoodPage }) {
           </Link>
         ))
       ) : (
-        <p>Нет тегов</p> // Можно заменить на `null`, если не нужно сообщение
+        <p>Нет тегов</p>
       )}
     </div>
   );

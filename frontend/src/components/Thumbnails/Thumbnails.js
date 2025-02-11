@@ -5,10 +5,10 @@ import StarRating from '../StarRating/StarRating';
 import classes from './thumbnails.module.css';
 
 export default function Thumbnails({ foods = [] }) {
-  console.log("Received foods:", foods); // Проверяем, что приходит
+  console.log("Foods received:", foods); // Проверяем входные данные
 
   if (!Array.isArray(foods)) {
-    return <p>Ошибка: данные не загружены</p>; // Безопасный рендер
+    return <p>Ошибка: данные не загружены</p>;
   }
 
   return (
@@ -25,7 +25,9 @@ export default function Thumbnails({ foods = [] }) {
               <div className={classes.content}>
                 <div className={classes.name}>{food.name}</div>
                 <span
-                  className={`${classes.favorite} ${food.favorite ? '' : classes.not}`}
+                  className={`${classes.favorite} ${
+                    food.favorite ? '' : classes.not
+                  }`}
                 >
                   ❤
                 </span>
