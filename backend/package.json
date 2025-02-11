@@ -1,12 +1,12 @@
 {
   "name": "backend",
   "version": "1.0.0",
-  "description": "",
-  "main": "index.js",
+  "description": "Backend for your application",
+  "main": "src/index.js",
   "type": "module",
   "scripts": {
     "start": "node src/index.js",
-    "dev": "nodemon src/server.js",
+    "dev": "nodemon src/index.js",
     "test": "cross-env NODE_OPTIONS=--experimental-vm-modules jest",
     "test:watch": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --watch",
     "test:coverage": "cross-env NODE_OPTIONS=--experimental-vm-modules jest --coverage"
@@ -36,6 +36,6 @@
     "cross-env": "^7.0.3",
     "jest": "^29.7.0",
     "mongodb-memory-server": "^9.5.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^3.0.2"
   }
 }
