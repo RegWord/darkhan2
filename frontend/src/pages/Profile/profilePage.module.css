@@ -1,0 +1,32 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin-top: 3rem;
+}
+
+.details {
+  width: 28rem;
+}
+
+.verificationSection {
+    margin: 1rem 0;
+    padding: 1rem;
+    border: 1px solid #ddd;
+    border-radius: 0.5rem;
+}
+
+.emailStatus {
+    margin-bottom: 1rem;
+}
+
+.verified {
+    color: #22c55e;
+    font-weight: bold;
+}
+
+.unverified {
+    color: #ef4444;
+    font-weight: bold;
+}
